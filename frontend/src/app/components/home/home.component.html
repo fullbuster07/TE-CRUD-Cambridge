@@ -6,8 +6,13 @@
 </nav>
 
 
-     <app-articles></app-articles>
 
 
+
+      <ng-container [ngSwitch]="activeRoute">
+        <div *ngSwitchCase="'/add-article'"><app-add-article></app-add-article></div>
+        <div *ngSwitchCase="'/update-article'">  <app-update-article></app-update-article></div>
+        <div *ngSwitchDefault><app-articles></app-articles></div>
+      </ng-container>
     
 

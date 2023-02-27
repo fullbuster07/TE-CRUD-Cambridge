@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from 'src/app/services/request.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,17 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HomeComponent implements OnInit{
 
-  
+  activeRoute : string ="";
   constructor(private _requestService : RequestService,
-    private _authService : AuthService){ }
+              private _authService : AuthService,
+              private router: Router){
+      this.router.events.subscribe(event => {
+        if (event instanceof NavigationEnd) {
+          console.log(this.activeRoute = event.url)
+        }
+      });
+
+     }
 
   logout(){
     this._authService.logout()
