@@ -1,15 +1,19 @@
+<app-search-article  (valueChange)='onChange($event)'></app-search-article>
+
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">ID</th>
+        <th scope="col">UserID</th>
         <th scope="col">Title</th>
         <th scope="col">Date</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
-    <tbody *ngFor="let article of articles; let i = index">
-      <tr>
-        <th scope="row">{{i+1}}</th>
+    <tbody >
+      <tr *ngFor="let article of articles | filter: searchKeyword">
+        <td>{{article.id}}</td>
+        <td>{{article.userId}}</td>
         <td>{{article.title}}</td>
         <td>{{article.date | date}}</td>
         <button class="btn btn-outline-dark">Edit</button>

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input, Output, EventEmitter } from '@angular/core';
 import { RequestService } from 'src/app/services/request.service';
-import { Articles } from 'src/app/interfaces/interface-articles';
 
 @Component({
   selector: 'app-articles',
@@ -9,7 +8,9 @@ import { Articles } from 'src/app/interfaces/interface-articles';
 })
 export class ArticlesComponent implements OnInit{
 
-  articles : any = [];
+  searchKeyword: any;
+  articles : any;
+  
   constructor(private _requestService : RequestService){ }
 
     ngOnInit(): void {
@@ -18,4 +19,9 @@ export class ArticlesComponent implements OnInit{
         next : (res) => console.log(this.articles = res)
       })
     }
+
+    onChange(keyword: any): void {
+      console.log(this.searchKeyword = keyword)
+    }            
+       
 }
