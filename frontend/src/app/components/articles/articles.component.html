@@ -1,6 +1,8 @@
-<app-search-article  (valueChange)='onChange($event)'></app-search-article>
 
-<table class="table">
+
+<div class="container">
+  <app-search-article  (valueChange)='onChange($event)'></app-search-article>
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -16,7 +18,9 @@
         <td>{{article.userId}}</td>
         <td>{{article.title}}</td>
         <td>{{article.date | date}}</td>
-        <button class="btn btn-outline-dark">Edit</button>
+        <button class="btn btn-outline-dark" (click)="updateArticle()">Edit</button>
       </tr>
     </tbody>
   </table>
+</div>
+

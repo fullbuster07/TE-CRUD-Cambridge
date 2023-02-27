@@ -1,9 +1,16 @@
 .search-container {
     border: 0;
-    float: left;
     margin: 10px;
-    input{
-        width: 200%;
-        height: 50px;;
+
+    .add-article-container{
+        display: inline;
+        input{
+            width: 50%;
+            height: 50px;
+        }
+        .btn{
+            margin-top: 9px;
+            float: right;   
+        }
     }
   }
