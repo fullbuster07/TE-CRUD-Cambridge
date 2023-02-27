@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { UpdateArticleComponent } from './components/articles/update-article/update-article.component';
 import { SearchArticleComponent } from './components/search-article/search-article.component';
+import { AddArticleComponent } from './components/articles/add-article/add-article.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SearchArticleComponent } from './components/search-article/search-artic
     LoginComponent,
     ArticlesComponent,
     UpdateArticleComponent,
-    SearchArticleComponent
+    SearchArticleComponent,
+    AddArticleComponent
   ],
   imports: [
     BrowserModule,
