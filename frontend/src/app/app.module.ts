@@ -15,7 +15,8 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { UpdateArticleComponent } from './components/articles/update-article/update-article.component';
 import { SearchArticleComponent } from './components/search-article/search-article.component';
 import { AddArticleComponent } from './components/articles/add-article/add-article.component';
-
+import { DatePickerComponent } from './common/date-picker/date-picker.component';
+import { DatePipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { AddArticleComponent } from './components/articles/add-article/add-artic
     ArticlesComponent,
     UpdateArticleComponent,
     SearchArticleComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    DatePickerComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { AddArticleComponent } from './components/articles/add-article/add-artic
     
   ],
   providers: [RequestService,
-              AuthService],
+              AuthService,
+              DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

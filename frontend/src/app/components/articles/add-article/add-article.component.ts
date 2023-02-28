@@ -5,14 +5,13 @@ import { Articles } from 'src/app/interfaces/interface-articles';
 import { Router } from '@angular/router';
 declare var $: any;
 import 'jquery';
-import "jquery-ui"
 
 @Component({
   selector: 'app-add-article',
   templateUrl: './add-article.component.html',
   styleUrls: ['./add-article.component.scss']
 })
-export class AddArticleComponent implements OnInit, AfterViewInit{
+export class AddArticleComponent implements OnInit{
 
   successMessage: any;
   errorMessage: any;
@@ -37,7 +36,7 @@ export class AddArticleComponent implements OnInit, AfterViewInit{
     console.log(this.articleForm.value)
   }
   onSubmit(){
-    this.articleForm.value.date = $("#date").val();
+    this.articleForm.value.date = $("#datepicker").val();
     const formData : Articles | any= this.articleForm.value
 
     this._requestService.action ="articles"
@@ -51,13 +50,6 @@ export class AddArticleComponent implements OnInit, AfterViewInit{
      }
     )
     console.log(formData)
-  }
-
-  //Jquery Date Picker Function
-  ngAfterViewInit(){
-    $( function() {
-      $( "#date" ).datepicker();
-      } );
   }
     
 }

@@ -18,7 +18,7 @@
         <td>{{article.userId}}</td>
         <td>{{article.title}}</td>
         <td>{{article.date | date}}</td>
-        <button class="btn btn-outline-dark" (click)="updateArticle()">Edit</button>
+        <button class="btn btn-outline-dark" (click)="updateArticle(article.id)">Edit</button>
       </tr>
     </tbody>
   </table>
