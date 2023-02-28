@@ -12,6 +12,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     fetch('http://localhost:3000/articles')
       .then(res => res.json())
-      .then(res => console.log(res));
+      .then(res => (res));
   }
 }
