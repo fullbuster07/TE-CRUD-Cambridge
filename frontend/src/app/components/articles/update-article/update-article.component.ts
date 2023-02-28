@@ -4,6 +4,7 @@ import { RequestService } from 'src/app/services/request.service';
 import { Articles } from 'src/app/interfaces/interface-articles';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 declare var $: any;
 import 'jquery';
@@ -15,6 +16,7 @@ import { DatePipe } from '@angular/common';
 })
 export class UpdateArticleComponent implements OnInit{
 
+  greetings: string = "Hello User!"
   successMessage: any;
   errorMessage: any;
   id: any;
@@ -27,6 +29,7 @@ export class UpdateArticleComponent implements OnInit{
 
 
   constructor(private _requestService : RequestService,
+              private _authService : AuthService,
               private fb: FormBuilder,
               private router: Router,
               private activatedRoute: ActivatedRoute,
@@ -37,6 +40,7 @@ export class UpdateArticleComponent implements OnInit{
 
   ngOnInit(): void {
     let user: any= localStorage.getItem("currentUser")
+    this.greetings =`Hello ${JSON.parse(user)?.userName}!`
 
     this._requestService.getRequestById(this.id).subscribe(
     {  
@@ -56,6 +60,9 @@ export class UpdateArticleComponent implements OnInit{
 
   }
 
+  logout(){
+    this._authService.logout()
+  }
   onSubmit(){
     const date = new Date($("#datepicker").val())
     this.articleForm.value.date = date?.toISOString().slice(0,10);
