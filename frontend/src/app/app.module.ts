@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from  '@angular/common/http';
+import { HttpClientModule, HttpClient } from  '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+import { RequestService } from './services/request.service';
+import { AuthService } from './services/auth.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -31,7 +34,8 @@ import { AddArticleComponent } from './components/articles/add-article/add-artic
     Ng2SearchPipeModule,
     
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [RequestService,
+              AuthService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
