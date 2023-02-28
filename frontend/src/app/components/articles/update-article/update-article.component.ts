@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { RequestService } from 'src/app/services/request.service';
 import { Articles } from 'src/app/interfaces/interface-articles';
 import { Router } from '@angular/router';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 declare var $: any;
 import 'jquery';
