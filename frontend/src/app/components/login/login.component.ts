@@ -1,4 +1,4 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RequestService } from 'src/app/services/request.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,8 +14,6 @@ export class LoginComponent implements OnInit{
 
   users: User | undefined;
 	errorMessage : any = "";
-	errorMessage2 : string = "";
-
   
   loginForm = this.fb.group({
     username: ['', [Validators.required]],
@@ -26,7 +24,8 @@ export class LoginComponent implements OnInit{
   constructor(private _requestService : RequestService,
     private _authService : AuthService,
     private fb: FormBuilder){    
-       localStorage.removeItem("currentUser");}
+       localStorage.removeItem("currentUser");
+      }
 
   onSubmit(){
     let formData = this.loginForm.value;
