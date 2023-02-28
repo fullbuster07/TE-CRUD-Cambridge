@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 
 declare var $: any;
-import 'jquery';
+// import 'jquery';
 import "jquery-ui"
 
 @Component({

@@ -4,7 +4,7 @@ import { RequestService } from 'src/app/services/request.service';
 import { Articles } from 'src/app/interfaces/interface-articles';
 import { Router } from '@angular/router';
 declare var $: any;
-import 'jquery';
+// import 'jquery';
 
 @Component({
   selector: 'app-add-article',
