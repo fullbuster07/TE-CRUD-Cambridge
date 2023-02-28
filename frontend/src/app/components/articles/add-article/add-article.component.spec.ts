@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientModule } from '@angular/common/http';
 import { AddArticleComponent } from './add-article.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import 'jquery';
 
 describe('AddArticleComponent', () => {
   let component: AddArticleComponent;
@@ -8,7 +12,9 @@ describe('AddArticleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddArticleComponent ]
+      imports: [HttpClientModule, RouterTestingModule, ReactiveFormsModule, RouterModule],
+      declarations: [ AddArticleComponent ],
+      providers: []
     })
     .compileComponents();
 
