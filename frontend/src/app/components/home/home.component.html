@@ -1,18 +1,23 @@
 <nav>
-    <title>Asset Management</title>
+    <title>Article Management</title>
     <div class="logout">
+        <p>{{greetings}}</p>
         <button class="btn btn-outline-dark" (click)="logout()">Logout</button>
     </div>
 </nav>
 
+<ng-container [ngSwitch]="activeRoute">
+  <div *ngSwitchCase="'/add-article'">
+    <app-add-article></app-add-article>
+  </div>
+  
+  <div *ngSwitchCase="'/update-article'">  
+    <app-update-article></app-update-article>
+  </div>
 
-
-
-
-      <ng-container [ngSwitch]="activeRoute">
-        <div *ngSwitchCase="'/add-article'"><app-add-article></app-add-article></div>
-        <div *ngSwitchCase="'/update-article'">  <app-update-article></app-update-article></div>
-        <div *ngSwitchDefault><app-articles></app-articles></div>
-      </ng-container>
+  <div *ngSwitchDefault>
+    <app-articles></app-articles>
+  </div>
+</ng-container>
     
 

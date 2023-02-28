@@ -10,6 +10,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class HomeComponent implements OnInit{
 
+  greetings: string = "Hello User!"
   activeRoute : string ="";
   constructor(private _requestService : RequestService,
               private _authService : AuthService,
@@ -26,6 +27,9 @@ export class HomeComponent implements OnInit{
     this._authService.logout()
   }
   ngOnInit(): void {
+    let user: any= localStorage.getItem("currentUser")
+    this.greetings =`Hello ${JSON.parse(user)?.userName}!`
+
     this._requestService.action ="articles";
     this._requestService.getRequest().subscribe({
       next : (res) => console.log(res)

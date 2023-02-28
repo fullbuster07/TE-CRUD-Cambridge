@@ -13,8 +13,18 @@ nav {
         padding: 14px 16px;
         text-decoration: none;
         font-size: larger;
+        font-weight: bold;
       }
       .logout{
+        p {
+          display: inline;
+          color: #666;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: larger;
+        }
+     
         margin-top: 9px;
         float: right;
       }
