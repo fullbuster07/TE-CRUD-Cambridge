@@ -19,10 +19,12 @@ export class ArticlesComponent implements OnInit{
       this._requestService.getRequest().subscribe({
         next : (res) => console.log(this.articles = res)
       })
+      
     }
 
-    updateArticle(){
-      this.router.navigate(["update-article"]);
+    updateArticle(id: any){
+      console.log(id)
+      this.router.navigate(["update-article", id]);
     }
 
     onChange(keyword: any): void {

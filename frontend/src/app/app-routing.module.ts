@@ -15,10 +15,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'article', component: ArticlesComponent, canActivate: [AuthGuard] },
   { path: 'add-article', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'update-article', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'update-article/:id', component: UpdateArticleComponent, canActivate: [AuthGuard] },
   
   //add landing page for wildcard route e.g 404 page not found
-  {path:'**', component: LoginComponent},
+  // {path:'**', component: LoginComponent},
 ];
 
 @NgModule({
