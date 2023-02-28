@@ -1,12 +1,1 @@
-@import "bootstrap";
-
-
-$feature-bg: #ffd803;
-
-.btn-feature {
-  @include button-variant($feature-bg, darken($feature-bg, 3%));
-
-  // optitional
-  // color: #fff; #uncomment and add your color
-}
 

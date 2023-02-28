@@ -7,7 +7,6 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 declare var $: any;
-import 'jquery';
 import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-update-article',
