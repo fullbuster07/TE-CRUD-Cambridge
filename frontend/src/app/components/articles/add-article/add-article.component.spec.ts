@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddArticleComponent } from './add-article.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { DatePickerComponent } from 'src/app/common/date-picker/date-picker.component';
+import { DatePipe } from '@angular/common';
 import 'jquery';
 
 describe('AddArticleComponent', () => {
@@ -13,8 +15,8 @@ describe('AddArticleComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientModule, RouterTestingModule, ReactiveFormsModule, RouterModule],
-      declarations: [ AddArticleComponent ],
-      providers: []
+      declarations: [ AddArticleComponent, DatePickerComponent ],
+      providers: [DatePipe]
     })
     .compileComponents();
 

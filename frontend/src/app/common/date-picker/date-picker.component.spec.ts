@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { DatePipe } from '@angular/common';
 import { DatePickerComponent } from './date-picker.component';
 
 describe('DatePickerComponent', () => {
@@ -8,7 +8,8 @@ describe('DatePickerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DatePickerComponent ]
+      declarations: [ DatePickerComponent ],
+      providers: [DatePipe]
     })
     .compileComponents();
 
